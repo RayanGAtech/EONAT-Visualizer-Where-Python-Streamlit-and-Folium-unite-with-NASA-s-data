@@ -1,15 +1,9 @@
-import map_1
+from map_logic import Geo_map
 import streamlit as st
 from streamlit_folium import folium_static
 
 
-sas = map_1.Geo_map()
-
-class stream_dash():
-
-    sas.wildfire()
-    sas.vol()
-    sas.iceberg()
+class stream_dash(Geo_map):
 
     #Bootstap import
     st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
@@ -40,25 +34,27 @@ class stream_dash():
     </nav>
     """, unsafe_allow_html=True)
 
-        #sidebar element
-    with st.sidebar:
-        # day display
-        st.session_state.my_slider = 0
-        slider = st.slider(
-          label='Choose a Value', min_value=1,
-          max_value=1000, value=1, key='my_slider')
-
     #header text
     st.markdown('''# *Earth Observatory Natural Event Tracker*
     A simple Natural Event Tracker pulling data from *NASA API*.''')
     st.header('**Tracker Map**')
 
+         #sidebar element
+    with st.sidebar:
+          # day display
+          #st.session_state.my_slider = 0
+          slider = st.slider(
+            label='Choose a Value', min_value=1,
+            max_value=1000, value=1, key='my_slider')
+    
     # map display
-    folium_static(sas.m)
+    Geo_map.volcano()
+    Geo_map.wildfire()
+    Geo_map.iceberg()
+    folium_static(Geo_map.m)
 
     # text
     st.info('Credit: Created by @Morgan_techy ([Rayan G. A.](https://www.linkedin.com/in/rayan-g-abukelab-18ab2914a/))')
-    st.info(slider)
     #JS import
     st.markdown("""
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

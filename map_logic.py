@@ -1,19 +1,16 @@
 import folium
 import requests
-import bridge
-
-var_bridge = bridge.b()
 
 class Geo_map:
     
-    day = var_bridge.var
-    r = requests.get(f'https://eonet.gsfc.nasa.gov/api/v3/events?days=20')
-    p_r = r.json()  
+    url1 = f'https://eonet.gsfc.nasa.gov/api/v3/events'
+    r = requests.get(url1) 
+    p_r = r.json()
     events = p_r['events']
     #create a map object
     m = folium.Map(location= [15,16], tiles="Cartodbdark_matter",zoom_start=2, min_zoom = 2, max_bounds=True)
 
-    def vol(self):
+    def volcano():
             for count in range(len(Geo_map.events)):
                 for i in Geo_map.p_r['events'][count]['geometry']:
                     cord_A = i['coordinates'][1]
@@ -27,7 +24,7 @@ class Geo_map:
                                     #create markers
                                     folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/volcano.png', icon_size=(20,20))).add_to(Geo_map.m)
 
-    def wildfire(self):
+    def wildfire():
             for count in range(len(Geo_map.events)):
                 for i in Geo_map.p_r['events'][count]['geometry']:
                         cord_A = i['coordinates'][1]
@@ -41,7 +38,7 @@ class Geo_map:
                                 #create markers
                                 folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/fire-solid.png', icon_size=(20,20))).add_to(Geo_map.m)
 
-    def iceberg(self):
+    def iceberg():
             for count in range(len(Geo_map.events)):
                 for i in Geo_map.p_r['events'][count]['geometry']:
                             cord_A = i['coordinates'][1]

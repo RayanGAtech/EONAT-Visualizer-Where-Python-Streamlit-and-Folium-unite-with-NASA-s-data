@@ -1,4 +1,0 @@
-
-
-class b():
-    var = input()
