@@ -117,17 +117,22 @@ with st.sidebar:
         volcano()
         wildfire()
         iceberg()
-
         
 #display map
 folium_static(m)
-
-
 
 # text
 st.info('Credit: Created by @Morgan_techy ([Rayan G. A.](https://www.linkedin.com/in/rayan-g-abukelab-18ab2914a/))')
 st.info('Used API: https://eonet.gsfc.nasa.gov/api/v3/events')
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 #JS import
 st.markdown("""

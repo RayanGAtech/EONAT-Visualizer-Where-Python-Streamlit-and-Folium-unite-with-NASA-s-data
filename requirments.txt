@@ -1,0 +1,4 @@
+folium
+requests
+streamlit as st
+streamlit_folium import folium_static
