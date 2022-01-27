@@ -33,9 +33,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 #header text
-st.markdown('''# *Earth Observatory Natural Event Tracker*
-A simple Natural Event Tracker pulling data from *NASA API*.''')
-st.header('**Tracker Map**')
+st.markdown('''# *Earth Observatory Natural Event Visualization*''')
+st.header('**EONAT Map**')
 
 st.markdown(
     f'''
