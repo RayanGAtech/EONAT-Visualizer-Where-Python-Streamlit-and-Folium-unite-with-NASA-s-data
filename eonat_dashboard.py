@@ -8,7 +8,7 @@ st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootst
 
 #Navbar
 st.markdown("""
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3498DB;">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="padding-left:400px;">
     <a class="navbar-brand" href="https://share.streamlit.io/morgan-techy/nasaapi/init/eonat_dashboard.py" target="_blank">EONAT VISUAL</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,17 @@ st.markdown("""
 st.markdown('''# *Earth Observatory Natural Event Tracker*
 A simple Natural Event Tracker pulling data from *NASA API*.''')
 st.header('**Tracker Map**')
+
+st.markdown(
+    f'''
+        <style>
+            .sidebar .sidebar-content {{
+                height: 50px;
+            }}
+        </style>
+    ''',
+    unsafe_allow_html=True
+)
 
 # sidebar to hold the side page features and text
 with st.sidebar:
