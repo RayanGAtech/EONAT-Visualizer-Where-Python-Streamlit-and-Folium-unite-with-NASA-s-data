@@ -53,7 +53,7 @@ events = p_r['events']
 #create a map object
 m = folium.Map(location= [15,16], tiles="Cartodbdark_matter",zoom_start=2, min_zoom = 2, max_bounds=True)
 
-# volcano events
+# volcano events function
 def volcano():
             for count in range(len(events)):
                 for i in p_r['events'][count]['geometry']:
@@ -67,7 +67,7 @@ def volcano():
                                     type = 'Volcano\nGens'
                                     #create markers
                                     folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/volcano.png', icon_size=(20,20))).add_to(m)
-# wildfire events
+# wildfire events function
 def wildfire():
             for count in range(len(events)):
                 for i in p_r['events'][count]['geometry']:
@@ -81,9 +81,8 @@ def wildfire():
                                 type = 'Wildfires'
                                 #create markers
                                 folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/fire-solid.png', icon_size=(20,20))).add_to(m)
-# iceberg events
+# iceberg events function
 def iceberg():
-
                 for count in range(len(events)):
                     for i in p_r['events'][count]['geometry']:
                                 cord_A = i['coordinates'][1]
@@ -96,19 +95,39 @@ def iceberg():
                                     type = 'Iceberg'
                                     #create markers
                                     folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/iceberg.png', icon_size=(20,20))).add_to(m)
-# call the functions 
-volcano()
-wildfire()
-iceberg()
-#display map
-folium_static(m)
+
+ 
 
 # sidebar to hold the side page features and text
 with st.sidebar:
-    st.write('rayan')
+    genre = st.radio(
+     "Please select an event:",
+     ('All','volcano', 'wildfire', 'iceberg'))
+
+    if genre == 'volcano':
+        # call the function
+        volcano()
+    elif genre == 'wildfire':
+        # call the function
+        wildfire()
+    elif genre == 'iceberg':
+        # call the function
+        iceberg()
+    else:
+        volcano()
+        wildfire()
+        iceberg()
+
+        
+#display map
+folium_static(m)
+
+
 
 # text
 st.info('Credit: Created by @Morgan_techy ([Rayan G. A.](https://www.linkedin.com/in/rayan-g-abukelab-18ab2914a/))')
+st.info('Used API: https://eonet.gsfc.nasa.gov/api/v3/events')
+
 
 #JS import
 st.markdown("""
