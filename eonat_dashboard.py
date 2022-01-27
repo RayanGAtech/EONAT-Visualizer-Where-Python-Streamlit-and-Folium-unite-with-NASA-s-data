@@ -8,29 +8,27 @@ st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootst
 
 #Navbar
 st.markdown("""
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark" style="background-color: #3498DB;">
+    <a class="navbar-brand" href="https://share.streamlit.io/morgan-techy/nasaapi/init/eonat_dashboard.py" target="_blank">EONAT VISUAL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+        <a class="nav-link disabled" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+        <a class="nav-link" href="https://github.com/morgan-techy" target="_blank">Github</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link" href="https://twitter.com/Captain39Morgan" target="_blank">Twitter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link" href="https://www.linkedin.com/in/rayan-g-abukelab-18ab2914a/" target="_blank">Linkedin</a>
         </li>
-      </ul>
+    </ul>
     </div>
-  </div>
 </nav>
 """, unsafe_allow_html=True)
 
