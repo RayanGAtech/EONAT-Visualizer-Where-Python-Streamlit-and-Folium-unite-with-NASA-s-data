@@ -36,22 +36,12 @@ st.markdown("""
 st.markdown('''# *Earth Observatory Natural Event Visualization*''')
 st.header('**EONAT Map**')
 
-st.markdown(
-    f'''
-        <style>
-            .sidebar .sidebar-content {{
-                height: 50px;
-            }}
-        </style>
-    ''',
-    unsafe_allow_html=True
-)
 
 # sidebar to hold the side page features and text
 with st.sidebar:
 # slider to allow display an event on a particular day on the map
     slider = st.slider('Day Range:', 0, 365)
-    st.write('Day Range:', slider)
+    st.write('You are searching in the last:', slider, 'days')
 
 # API url to get the data from nasa api    
 url1 = f'https://eonet.gsfc.nasa.gov/api/v3/events?days={slider}'
