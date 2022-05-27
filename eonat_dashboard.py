@@ -36,7 +36,6 @@ st.markdown("""
 st.markdown('''# *Earth Observatory Natural Event Visualization*''')
 st.header('**EONAT Map**')
 
-
 # sidebar to hold the side page features and text
 with st.sidebar:
 # slider to allow display an event on a particular day on the map
@@ -64,7 +63,7 @@ def volcano():
                         if (event_type) == 'Volcanoes':
                                     #global tooltip
                                     tooltip = 'click for more info'
-                                    type = 'Volcano\nGens'
+                                    type = 'Volcano'
                                     #create markers
                                     folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/volcano.png', icon_size=(20,20))).add_to(m)
 # wildfire events function
@@ -95,8 +94,6 @@ def iceberg():
                                     type = 'Iceberg'
                                     #create markers
                                     folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/iceberg.png', icon_size=(20,20))).add_to(m)
-
- 
 
 # sidebar to hold the side page features and text
 with st.sidebar:
