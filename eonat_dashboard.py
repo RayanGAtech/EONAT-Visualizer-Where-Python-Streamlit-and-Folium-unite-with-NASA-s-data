@@ -19,10 +19,10 @@ st.markdown("""
         <a class="nav-link disabled" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="https://github.com/morgan-techy" target="_blank">Github</a>
+        <a class="nav-link" href="https://github.com/RayanGAtech/Earth-Observatory-Natural-Event-Visualization" target="_blank">Github</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="https://twitter.com/Captain39Morgan" target="_blank">Twitter</a>
+        <a class="nav-link" href="https://twitter.com/RayanG_A" target="_blank">Twitter</a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="https://www.linkedin.com/in/rayan-g-abukelab-18ab2914a/" target="_blank">Linkedin</a>
