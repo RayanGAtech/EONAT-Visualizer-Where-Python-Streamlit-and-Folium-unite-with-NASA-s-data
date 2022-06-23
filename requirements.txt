@@ -2,3 +2,4 @@ folium
 requests
 streamlit
 streamlit_folium
+st_lottie
