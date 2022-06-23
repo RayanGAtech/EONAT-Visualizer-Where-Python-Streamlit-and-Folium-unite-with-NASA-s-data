@@ -1,7 +1,9 @@
 import folium
 import requests
 import streamlit as st
+from streamlit_lottie import st_lottie
 from streamlit_folium import folium_static
+
 
  #Bootstap import
 st.markdown('<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">', unsafe_allow_html=True)
@@ -32,9 +34,18 @@ st.markdown("""
 </nav>
 """, unsafe_allow_html=True)
 
+def lottie(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
 #header text
-st.markdown('''# *Earth Observatory Natural Event Visualization*''')
-st.header('**EONAT Map**')
+st.markdown("<h1 style='text-align: center; color: white;'>Earth Observatory Natural Event Visualization</h1>", unsafe_allow_html=True)
+
+#earth animation
+l = lottie('https://assets9.lottiefiles.com/packages/lf20_blfn1jwy.json')
+st_lottie(l, height=300, key='earth_map')
 
 # sidebar to hold the side page features and text
 with st.sidebar:
@@ -58,42 +69,46 @@ def volcano():
                 for i in p_r['events'][count]['geometry']:
                     cord_A = i['coordinates'][1]
                     cord_B = i['coordinates'][0]
+                    date   = i['date']
                 for j in p_r['events'][count]['categories']:
                         event_type = j['title']
                         if (event_type) == 'Volcanoes':
                                     #global tooltip
                                     tooltip = 'click for more info'
-                                    type = 'Volcano'
+                                    type = p_r['events'][count]['title']
                                     #create markers
-                                    folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/volcano.png', icon_size=(20,20))).add_to(m)
+                                    folium.Marker([cord_A, cord_B], popup=folium.Popup(f'<strong>{type}<br>{date}<\strong>',max_width=150,min_width=150), tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/volcano.png', icon_size=(20,20))).add_to(m)
 # wildfire events function
 def wildfire():
             for count in range(len(events)):
                 for i in p_r['events'][count]['geometry']:
                         cord_A = i['coordinates'][1]
                         cord_B = i['coordinates'][0]
+                        date   = i['date']
                 for j in p_r['events'][count]['categories']:
                     event_type = j['title']
                     if (event_type) == 'Wildfires':
                                 #global tooltip
                                 tooltip = 'click for more info'
-                                type = 'Wildfires'
+                                type = p_r['events'][count]['title']
                                 #create markers
-                                folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/fire-solid.png', icon_size=(20,20))).add_to(m)
+                                folium.Marker([cord_A, cord_B], popup=folium.Popup(f'<strong>{type}<br>{date}<\strong>',max_width=150,min_width=150), tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/fire-solid.png', icon_size=(20,20))).add_to(m)
 # iceberg events function
 def iceberg():
                 for count in range(len(events)):
                     for i in p_r['events'][count]['geometry']:
                                 cord_A = i['coordinates'][1]
                                 cord_B = i['coordinates'][0]
+                                date   = i['date']
                     for j in p_r['events'][count]['categories']:
                         event_type = j['title']
                         if (event_type) == 'Sea and Lake Ice':
                                     #global tooltip
                                     tooltip = 'click for more info'
-                                    type = 'Iceberg'
+                                    type = p_r['events'][count]['title']
+                                    #date = p_r['events'][count]['geometry']['date']
                                     #create markers
-                                    folium.Marker([cord_A, cord_B], popup=f'<strong>{type}<\strong>', tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/iceberg.png', icon_size=(20,20))).add_to(m)
+                                    folium.Marker([cord_A, cord_B], popup=folium.Popup(f'<strong>{type}<br>{date}<\strong>',max_width=150,min_width=150), tooltip=tooltip, icon= folium.features.CustomIcon(icon_image='icon/iceberg.png', icon_size=(20,20))).add_to(m)
 
 # sidebar to hold the side page features and text
 with st.sidebar:
@@ -114,7 +129,6 @@ with st.sidebar:
         volcano()
         wildfire()
         iceberg()
-        
 #display map
 folium_static(m)
 
