@@ -9,15 +9,8 @@ for cmd: venv\Scripts\activate.bat
 for shell: venv\Scripts\Activate.ps1
 
 # Install Code Requirements (pip install)
-folium
 
-requests
-
-streamlit
-
-streamlit_folium
-
-streamlit_lottie
+pip install to-requirements.txt
 
 # Run The Applcation
 Streamlit run eonat_dashboard.py.
