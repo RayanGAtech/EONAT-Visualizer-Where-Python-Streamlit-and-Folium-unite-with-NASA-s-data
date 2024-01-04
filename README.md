@@ -27,17 +27,51 @@ Built on NASA's open-source API, EONET VISUAL encourages collaboration and innov
 EONET VISUAL awaits exploration at port 8080, ready to take you on a voyage through Earth's natural wonders. Immerse yourself in this digital odyssey and let the visual storytelling unfold.
 
 
-Activate Python Virtual Enviroment:
-py -m venv venv
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activate Python Virtual Environment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        h2 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Activate Python Virtual Environment:</h2>
+    <p>For CMD:</p>
+    <code>py -m venv venv</code>
+    <p>Activate the virtual environment:</p>
+    <code>venv\Scripts\activate.bat</code>
 
-for cmd: venv\Scripts\activate.bat
+    <p>For Shell:</p>
+    <code>venv\Scripts\Activate.ps1</code>
 
-for shell: venv\Scripts\Activate.ps1
+    <h2>Install Code Requirements (pip install):</h2>
+    <code>pip install -r to-requirements.txt</code>
 
-Install Code Requirements (pip install)
-pip install to-requirements.txt
+    <h2>Run The Application:</h2>
+    <code>streamlit run eonat_dashboard.py</code>
 
-Run The Applcation
-Streamlit run eonat_dashboard.py.
+    <p>Application now is running on port: <code>8080</code>.</p>
+</body>
+</html>
 
-#Application now is running on port :8080
