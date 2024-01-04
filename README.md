@@ -23,10 +23,6 @@ With a streamlined setup process, EONET VISUAL invites users to immerse themselv
 🔗 <b>Open Source Collaboration:</b> 
 Built on NASA's open-source API, EONET VISUAL encourages collaboration and innovation. Join a community of enthusiasts, developers, and Earth enthusiasts as we explore new ways to understand and appreciate the beauty and power of our planet.
 
-🌐 <b>Running on Port 8080:</b> 
-EONET VISUAL awaits exploration at port 8080, ready to take you on a voyage through Earth's natural wonders. Immerse yourself in this digital odyssey and let the visual storytelling unfold.
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
