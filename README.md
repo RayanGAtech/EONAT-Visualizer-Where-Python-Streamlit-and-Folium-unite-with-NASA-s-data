@@ -61,7 +61,6 @@ EONET VISUAL awaits exploration at port 8080, ready to take you on a voyage thro
 
     <h2>Run The Application:</h2>
     <code>streamlit run eonat_dashboard.py</code>
-
   <code> Application now is running on port: <code>8080</code>
 </body>
 </html>
