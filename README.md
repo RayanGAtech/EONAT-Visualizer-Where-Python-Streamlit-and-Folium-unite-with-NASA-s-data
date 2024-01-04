@@ -26,4 +26,18 @@ Built on NASA's open-source API, EONET VISUAL encourages collaboration and innov
 🌐 <b>Running on Port 8080:</b> 
 EONET VISUAL awaits exploration at port 8080, ready to take you on a voyage through Earth's natural wonders. Immerse yourself in this digital odyssey and let the visual storytelling unfold.
 
-Embark on a journey like never before with EONET VISUAL – where data becomes art, and Earth's story is unveiled in vivid detail. Explore. Discover. Appreciate.
+
+Activate Python Virtual Enviroment:
+py -m venv venv
+
+for cmd: venv\Scripts\activate.bat
+
+for shell: venv\Scripts\Activate.ps1
+
+Install Code Requirements (pip install)
+pip install to-requirements.txt
+
+Run The Applcation
+Streamlit run eonat_dashboard.py.
+
+#Application now is running on port :8080
