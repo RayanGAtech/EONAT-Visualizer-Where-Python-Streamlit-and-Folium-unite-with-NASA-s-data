@@ -59,9 +59,9 @@ EONET VISUAL awaits exploration at port 8080, ready to take you on a voyage thro
     <h2>Install Code Requirements (pip install):</h2>
     <code>pip install -r to-requirements.txt</code>
 
-    <h2>Run The Application:</h2>
-    <code>streamlit run eonat_dashboard.py</code>
-  <code> Application now is running on port: <code>8080</code>
+    <h2> Run The Application: </h2>
+    <code> streamlit run eonat_dashboard.py </code>
+  <code> Application now is running on port: <code>8080 </code>
 </body>
 </html>
 
