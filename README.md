@@ -56,15 +56,6 @@ EONET VISUAL awaits exploration at port 8080, ready to take you on a voyage thro
     </style>
 </head>
 <body>
-    <h2>Activate Python Virtual Environment:</h2>
-    <p>For CMD:</p>
-    <code>py -m venv venv</code>
-    <p>Activate the virtual environment:</p>
-    <code>venv\Scripts\activate.bat</code>
-
-    <p>For Shell:</p>
-    <code>venv\Scripts\Activate.ps1</code>
-
     <h2>Install Code Requirements (pip install):</h2>
     <code>pip install -r to-requirements.txt</code>
 
