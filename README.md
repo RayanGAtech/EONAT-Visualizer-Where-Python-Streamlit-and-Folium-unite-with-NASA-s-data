@@ -1,5 +1,4 @@
-#EONET VISUAL: Unveiling Earth's Dynamic Canvas
-
+<b>EONET VISUAL: Unveiling Earth's Dynamic Canvas</b> 
 Embark on a mesmerizing journey with EONET VISUAL, a cutting-edge web dashboard that unveils the tapestry of natural events occurring across our planet. Crafted using Python, Streamlit, and Folium, this visionary project transforms raw data into an immersive visual experience that transcends the boundaries of ordinary mapping.
 
 🌎 #Mapping Nature's Symphony:
